@@ -1,13 +1,13 @@
 let modo;
 let usuario;
 
-function Usuario(nombre, email, dni, rango) {
-    this.nombre = nombre;
-    this.email = email;
-    this.dni = dni;
-    this.rango = rango;
-
-    console.log("usuario creado");
+class Usuario {
+    constructor(nombre, email, dni, rango) {
+        this.nombre = nombre;
+        this.email = email;
+        this.dni = dni;
+        this.rango = rango;
+    }
 }
 
 function modoInvitado() {
