@@ -19,6 +19,7 @@ function modoInvitado() {
     if (!document.getElementById("login")) {
         crearBoton("login", "Login", modoUsuario);
     }
+    document.getElementById("contenedorDos").innerHTML = "Bienvenido a esta web!<br>Pulsa login para entrar como usuario registrado";
 }
 
 function modoUsuario() {
@@ -28,11 +29,16 @@ function modoUsuario() {
     crearBoton("guardar", "Guardar Datos");
     document.getElementById("guardar").setAttribute("disabled", "");
     //document.getElementById("guardar").removeAttribute("disabled"); Esto lo haremos cuando validemos el formulario
-    crearBoton("administrador", "Modo Administrador");
+    crearBoton("administrador", "Modo Administrador", modoAdministrador);
+    crearFormUsuario();
 }
 
 function modoAdministrador() {
-    modo = "administrador"
+    modo = "administrador";
+    document.getElementById("guardar").setAttribute("disabled", "");
+    //document.getElementById("guardar").removeAttribute("disabled"); Esto lo haremos cuando validemos el formulario
+    crearFormAdmin();
+    
 }
 
 function crearBoton(id, mensaje, funcion) {
@@ -52,12 +58,16 @@ function eliminarBoton(id) {
     if (boton) {
         boton.remove;
         document.getElementById("contenedorUno").removeChild(boton);
-    } else {
-        console.log("El boton no existe");
     }
 }
 
+function crearFormUsuario() {
+    document.getElementById("contenedorDos").innerHTML="<label for='usuario'>Usuario: </label><input type='text' id='email'><br><label for='email'>Email: </label><input type='email' id='email'>";
+}
 
+function crearFormAdmin() {
+    document.getElementById("contenedorDos").innerHTML="<label for='usuario'>Usuario: </label><input type='text' id='email'><br><label for='email'>Email: </label><input type='email' id='email'><br><label for='dni'>DNI: </label><input type='text' id='dni'>";
+}
 
 
 
